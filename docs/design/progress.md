@@ -11,6 +11,7 @@
 - 首版可能超过 10000 用户；该规模不改变 monorepo 决定，容量和运行时扩展另行设计。
 - 已确认 CI、测试、开发验证与部署基线：本地 Git + GitHub Actions、Go 单元测试 + Docker PostgreSQL 集成测试、Mailpit + 开发验证适配器、容器化无状态 API + 托管 PostgreSQL + S3 兼容对象存储；记录见 [ADR 0004](../adr/0004-ci-testing-email-and-deployment.md)。
 - 用户不熟悉 Git/GitHub；后续创建仓库和首次提交会提供逐步操作说明。
+- 本地 Git 已初始化为 `main`，工程决策与现有文档已保存为提交 `bd6f109`；尚未配置远程 `origin`，也未推送到 GitHub。
 - 尚未确认：聊天本地加密方案、生产推送供应商、具体云厂商/区域、CI 密钥与发布流程、第一条切片之外的功能顺序。
 - 当前仍没有客户端、服务端或测试源码；完成工程决策后从零建立可运行骨架。
 
