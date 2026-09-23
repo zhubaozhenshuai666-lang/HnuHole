@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Hnuhole API
+  version: 0.1.0
+  description: Authenticated API contract for the first development slice.
+servers:
+  - url: /
+paths:
+  /api/v1/channels:
+    get:
+      operationId: listChannels
+      summary: List the channel directory
+      description: Returns the complete server-owned channel directory in stable order.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Complete channel directory.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChannelListResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '503':
+          $ref: '#/components/responses/ServiceUnavailable'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: opaque-session
+  schemas:
+    Channel:
+      type: object
+      additionalProperties: false
+      required:
+        - id
+        - code
+        - name
+        - initiallyVisible
+        - displayOrder
+      properties:
+        id:
+          type: string
+          format: uuid
+        code:
+          type: string
+          description: Immutable English machine identifier.
+          pattern: '^[a-z][a-z0-9_]*$'
+        name:
+          type: string
+          minLength: 1
+        initiallyVisible:
+          type: boolean
+        displayOrder:
+          type: integer
+          minimum: 1
+    ChannelListResponse:
+      type: object
+      additionalProperties: false
+      required:
+        - channels
+      properties:
+        channels:
+          type: array
+          minItems: 7
+          maxItems: 7
+          items:
+            $ref: '#/components/schemas/Channel'
+    ErrorBody:
+      type: object
+      additionalProperties: false
+      required:
+        - error
+        - requestId
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          required:
+            - code
+            - message
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+              additionalProperties: true
+              nullable: true
+        requestId:
+          type: string
+  responses:
+    Unauthorized:
+      description: The session is missing, invalid, expired, or revoked.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
+    ServiceUnavailable:
+      description: The channel directory could not be read or validated.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorBody'
