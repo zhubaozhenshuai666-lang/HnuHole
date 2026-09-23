@@ -10,8 +10,8 @@
 - 第二轮：`net/http` + `chi`、PostgreSQL + `pgx`/`sqlc`、REST/JSON + OpenAPI、前台 WebSocket 事件、Drift/SQLite + 系统安全存储，已确认。
 - 第三轮：单仓库 monorepo、`goose` + `oapi-codegen`、不透明服务端会话、宿主机 Flutter/Go + Docker Compose、文字内容主链，已确认；记录见 [ADR 0003](../adr/0003-repository-auth-and-first-slice.md)。
 - 第四轮：本地 Git + GitHub Actions、Go 单元测试 + Docker PostgreSQL 集成测试、Mailpit + 开发验证适配器、容器化无状态 API + 托管 PostgreSQL + S3 兼容对象存储，已确认；记录见 [ADR 0004](../adr/0004-ci-testing-email-and-deployment.md)。
-- Git/GitHub 目前不是用户熟悉领域；下一步会用逐条命令说明初始化、首次提交、创建远程仓库和查看 Actions，不要求用户凭记忆操作。
-- 本地 Git 已初始化为 `main`，首个本地提交为 `bd6f109 docs: record engineering decisions and bootstrap git`；尚未设置远程 `origin` 或推送。
+- Git/GitHub 目前不是用户熟悉领域；后续会用逐条命令说明提交、分支、推送和查看 Actions，不要求用户凭记忆操作。
+- 本地 Git 已初始化为 `main`，当前开发分支为 `feature/engineering-baseline`；远程 `origin` 已绑定 `https://github.com/zhubaozhenshuai666-lang/HnuHole.git`，并跟踪 `origin/feature/engineering-baseline`。
 - 下一步：安装与验证本机工具链、定义 monorepo 文件结构、创建 Git 工程入口和可运行骨架。
 
 ## 工作位置与讨论方式
