@@ -1,0 +1,33 @@
+{
+  "editor": "Inkscape 1.4.2",
+  "verified": "2026-09-09",
+  "sources": "Approved dark v2 reference; white version excluded",
+  "checks": [
+    {
+      "file": "docs/design/assets/post-detail-dark-final.svg",
+      "text_objects": 82,
+      "named_layers": 16,
+      "has_bitmap": false
+    },
+    {
+      "file": "docs/design/assets/post-detail-read-final.svg",
+      "text_objects": 20,
+      "named_layers": 3,
+      "has_bitmap": false
+    },
+    {
+      "file": "docs/design/assets/post-detail-comments-final.svg",
+      "text_objects": 47,
+      "named_layers": 10,
+      "has_bitmap": false
+    },
+    {
+      "file": "docs/design/assets/post-detail-replies-detail-final.svg",
+      "text_objects": 34,
+      "named_layers": 6,
+      "has_bitmap": false
+    }
+  ],
+  "runtime": "All four SVGs loaded/exported by installed Inkscape. Comparison visually checked after filter and font compatibility adjustments.",
+  "figma": "Not modified. User requested switching tools after MCP quota error."
+}

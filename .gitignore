@@ -1,0 +1,34 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.agents/
+
+# Local secrets and environment overrides
+.env
+.env.*
+!.env.example
+
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+*.iml
+
+# Go
+bin/
+coverage.out
+*.test
+
+# Local infrastructure state
+infra/.data/
+infra/.cache/
+
+# Generated API/client artifacts can be regenerated from the contract
+packages/openapi/generated/
+
+# Design archive duplicate
+docs.zip
